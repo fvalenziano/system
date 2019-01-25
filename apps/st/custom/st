@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# dmenu can't use bash aliases, swap st with script 
+# place this script in /usr/local/bin
+# move st binary to st.run and name this script st
+
+st.run tmux

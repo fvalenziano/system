@@ -1,0 +1,31 @@
+2018-12-18 12:56:48,299 INFO      Preparing Action ID: 1, "delete_indices"
+2018-12-18 12:56:48,780 INFO      Trying Action ID: 1, "delete_indices": Delete indices older than 7 days (based on index name), for logstash- prefixed indices. Ignore the error if the filter does not result in an actionable list of indices (ignore_empty_list) and exit cleanly.
+2018-12-18 12:56:49,519 INFO      DRY-RUN MODE.  No changes will be made.
+2018-12-18 12:56:49,519 INFO      (CLOSED) indices may be shown that may not be acted on by action "delete_indices".
+2018-12-18 12:56:49,520 INFO      DRY-RUN: delete_indices: hf20web-6.4.3-2018.12.10 with arguments: {}
+2018-12-18 12:56:49,520 INFO      DRY-RUN: delete_indices: hf20web-6.4.3-2018.12.11 with arguments: {}
+2018-12-18 12:56:49,520 INFO      Action ID: 1, "delete_indices" completed.
+2018-12-18 12:56:49,520 INFO      Job completed.
+2018-12-18 12:58:27,657 INFO      Preparing Action ID: 1, "delete_indices"
+2018-12-18 12:58:28,195 INFO      Trying Action ID: 1, "delete_indices": Delete indices older than 7 days (based on index name), for hf20web- prefixed indices. Ignore the error if the filter does not result in an actionable list of indices (ignore_empty_list) and exit cleanly.
+2018-12-18 12:58:29,848 INFO      DRY-RUN MODE.  No changes will be made.
+2018-12-18 12:58:29,848 INFO      (CLOSED) indices may be shown that may not be acted on by action "delete_indices".
+2018-12-18 12:58:29,849 INFO      DRY-RUN: delete_indices: hf20web-6.4.3-2018.12.10 with arguments: {}
+2018-12-18 12:58:29,850 INFO      DRY-RUN: delete_indices: hf20web-6.4.3-2018.12.11 with arguments: {}
+2018-12-18 12:58:29,850 INFO      Action ID: 1, "delete_indices" completed.
+2018-12-18 12:58:29,850 INFO      Preparing Action ID: 2, "delete_indices"
+2018-12-18 12:58:30,190 INFO      Trying Action ID: 2, "delete_indices": Delete indices older than 7 days (based on index name), for thgimages- prefixed indices. Ignore the error if the filter does not result in an actionable list of indices (ignore_empty_list) and exit cleanly.
+2018-12-18 12:58:30,959 INFO      Skipping action "delete_indices" due to empty list: <class 'curator.exceptions.NoIndices'>
+2018-12-18 12:58:30,959 INFO      Action ID: 2, "delete_indices" completed.
+2018-12-18 12:58:30,959 INFO      Job completed.
+2018-12-18 12:59:13,783 INFO      Preparing Action ID: 1, "delete_indices"
+2018-12-18 12:59:14,260 INFO      Trying Action ID: 1, "delete_indices": Delete indices older than 7 days (based on index name), for hf20web- prefixed indices. Ignore the error if the filter does not result in an actionable list of indices (ignore_empty_list) and exit cleanly.
+2018-12-18 12:59:15,745 INFO      Deleting selected indices: ['hf20web-6.4.3-2018.12.11', 'hf20web-6.4.3-2018.12.10']
+2018-12-18 12:59:15,745 INFO      ---deleting index hf20web-6.4.3-2018.12.11
+2018-12-18 12:59:15,745 INFO      ---deleting index hf20web-6.4.3-2018.12.10
+2018-12-18 12:59:21,324 INFO      Action ID: 1, "delete_indices" completed.
+2018-12-18 12:59:21,325 INFO      Preparing Action ID: 2, "delete_indices"
+2018-12-18 12:59:21,804 INFO      Trying Action ID: 2, "delete_indices": Delete indices older than 7 days (based on index name), for thgimages- prefixed indices. Ignore the error if the filter does not result in an actionable list of indices (ignore_empty_list) and exit cleanly.
+2018-12-18 12:59:22,413 INFO      Skipping action "delete_indices" due to empty list: <class 'curator.exceptions.NoIndices'>
+2018-12-18 12:59:22,414 INFO      Action ID: 2, "delete_indices" completed.
+2018-12-18 12:59:22,414 INFO      Job completed.

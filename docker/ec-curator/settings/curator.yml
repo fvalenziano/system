@@ -1,0 +1,20 @@
+---
+client:
+  hosts:
+    - https://983cda5224894022ab2a931385fe0480.us-west-2.aws.found.io
+  port: 9243
+  url_prefix:
+  use_ssl: False
+  certificate:
+  client_cert:
+  client_key:
+  ssl_no_validate: False
+  http_auth: elastic:aYTCAaofTvkUFN9Qr6NYE1m4 
+  timeout: 30
+  master_only: False
+
+logging:
+  loglevel: INFO
+  logfile: log.curator
+  logformat: default
+  blacklist: ['elasticsearch', 'urllib3']
