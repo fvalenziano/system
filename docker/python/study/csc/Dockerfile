@@ -5,3 +5,5 @@ ENV LANG C.UTF-8
 RUN apk add --no-cache \
     python3 \
     vim
+
+ENTRYPOINT [ "/bin/sh" ]
