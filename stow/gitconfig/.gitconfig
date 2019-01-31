@@ -2,3 +2,5 @@
 [user]
 	name = Frank Valenziano
 	email = frank@valenziano.us
+[core]
+	excludesFile = /home/frank/.system/stow/gitconfig/.gitignore
