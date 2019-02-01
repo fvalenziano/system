@@ -7,13 +7,12 @@
                 <h1>Dude.... just learn to count</h1>
                 <script async src="./javascript/index.js"></script>
                 <h1>Do you even lift?</h1>
-                <form id="frmTW" onsubmit="return fncHW()"> 
+                <form id="weight" onSubmit="return HalveWeight()"> 
                         Enter the weight you want to lift:
-                        <input type="number" name="enterWeight" id="idEW" min="45" >
-                        <button type="button" id="btnTW" value="plate it!" onclick="fncHW()">plate it!</button>
+                        <input type="number" name="enterWeight" id="InputWeight" min="45" >
+                        <button type="button" id="SubmitWeight" value="plate it!" onclick="HalveWeight()">plate it!</button>
                 </form>
-                <p id="dspHTW"></p>
-                <p id="halveit"></p>
+                <p id="displayHalfWeight"></p>
         </body>
 </html>
 

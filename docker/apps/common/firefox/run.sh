@@ -1,6 +1,6 @@
-#!/bin/bash
-docker run -ti --rm \
-	-e DISPLAY=$DISPLAY \
-	-v ~/.mozilla/:/home/firefox/.mozilla:rw \
-	-v /tmp/.X11-unix:/tmp/.X11-unix \
-	firefox
+#!/bin/sh
+
+docker run -t --rm \
+        -v /tmp/.X11-unix:/tmp/.X11-unix \
+        -v /etc/machine-id:/etc/machine-id:ro \
+        -e DISPLAY=$DISPLAY --name ff ff

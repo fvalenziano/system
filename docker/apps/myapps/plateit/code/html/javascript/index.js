@@ -20,10 +20,14 @@ var plate5 = 2.5;
 var varTW;
 var hTW;
 
-function fncHW() {
-        varTW = document.getElementById("frmTW").elements[0].value;
-        hTW = varTW / 2;
-        document.getElementById("dspHTW").innerHTML = hTW;
+//function HalveWeight() {
+//        varTW = document.getElementById("weight").elements[0].value;
+//        hTW = varTW / 2;
+//        document.getElementById("displayHalfWeight").innerHTML = hTW;
+//        return false;
+//}
+
+
+function HalveWeight() {
         return false;
 }
-

@@ -1,5 +1,14 @@
-FROM ubuntu:18.04
+FROM alpine:latest
 LABEL maintainer "frank@valenziano.us"
-ENV 
+ENV LANG C.UTF-8
 
+RUN apk add --no-cache \
+            alsa-lib \
+            ca-certificates \
+            firefox-esr \
+            hicolor-icon-theme \
+            mesa-dri-intel \
+            mesa-gl \
+            ttf-dejavu
 
+ENTRYPOINT [ "/usr/bin/firefox" ]
