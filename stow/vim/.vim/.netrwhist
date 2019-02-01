@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/frank/docker/elk/kibana/kibana.yml'
+let g:netrw_dirhist_2='/home/frank/.config/Slack/Local Storage'
+let g:netrw_dirhist_3='/home/frank/devops/docker/vim'
+let g:netrw_dirhist_4='/home/frank/devops/scripts'
+let g:netrw_dirhist_5='/home/frank/Dropbox/private/Tech/Notes'
+let g:netrw_dirhist_6='/home/frank/COMPUTER/stow/apps/.git'
+let g:netrw_dirhist_7='/home/frank/.system/stow/i3wm/i3'
+let g:netrw_dirhist_8='/home/frank/.system/stow/i3wm/.config'
+let g:netrw_dirhist_9='/home/frank/.system/apps/plateit/code/html'

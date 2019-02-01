@@ -1,0 +1,47 @@
+" vim-plug plugin manager
+"call plug#begin('~/.vim/autoload/plugged')
+call plug#begin('~/.system/vim-plugged/autoload/plugged')
+"JellyBean Colorscheme
+Plug 'git@github.com:fvalenziano/jellybeans.vim.git'
+" Docker syntax
+Plug 'git@github.com:fvalenziano/Dockerfile.vim.git'
+" end plugins
+call plug#end()
+
+set number
+set ai " enable auto-indent
+syntax on " highlighting and color
+" tabs are read as 4 spaces, tabs become spaces
+set tabstop=4
+set softtabstop=4
+set expandtab
+set cursorline " underlines cursor location
+set nowrap " disable wordwrap
+" perform menu navigation, but not autocompletion
+set wildmenu
+set wildmode=longest:full,full
+
+" split navigation shortcuts
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+" Open the new split pane on bottom/right
+set splitbelow
+set splitright
+
+" Inserting new line with Enter
+" Vim handling of escape sequences prevent Shift+Enter remap
+    " Keep Shift-O/o behavior for jumping to lines
+    " Enter - insert line below
+nmap <CR> o<Esc>k
+
+"Jellybeans colorscheme
+colorscheme jellybeans
+
+" auto-persist folds
+augroup AutoSaveFolds
+    autocmd!
+    autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+    autocmd BufWinEnter ?* silent! loadview
+augroup END
