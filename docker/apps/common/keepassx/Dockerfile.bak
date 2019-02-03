@@ -9,4 +9,10 @@ RUN apt-get update && apt-get install -y \
     keepassx \
     libcanberra-gtk*
 
+#RUN groupadd -r keepass && \
+        #    useradd -r -g keepass -G video keepass && \
+        #    mkdir -p /home/keepass/Downloads && \
+        #    chown -R keepass:keepass /home/keepass
+
+#USER keepass
 ENTRYPOINT [ "keepassx" ]
