@@ -12,22 +12,32 @@
 //      | ?? i suck at math
 //      | Display needed plates in descending order
 
-var plate1 = 45;
-var plate2 = 25;
-var plate3 = 10;
-var plate4 = 5;
-var plate5 = 2.5;
-var varTW;
-var hTW;
+// Define the available plate sizes and bar size
+weights() {
+        return {
+                weight: 45,
+                barWeight: 45,
+                platesAvailable: [45, 25, 10, 5, 2.5],
+                plates: []
+        }
+}
 
-//function HalveWeight() {
-//        varTW = document.getElementById("weight").elements[0].value;
-//        hTW = varTW / 2;
-//        document.getElementById("displayHalfWeight").innerHTML = hTW;
-//        return false;
-//}
-
-
-function HalveWeight() {
-        return false;
+methods: {
+        calculate() {
+                this.plates = [];
+                var left = this.weight - this.barWeight;
+                while( left > 0 ) {
+                        var foundOne = false;
+                        for( var i = 0; i < this.platesAvailable.length; i++ ) {
+                                var amount = this.platesAvailable[i]*2;
+                                if( amount <= left ) {
+                                        left -= amount;
+                                        this.plates.push( this.platesAvailable[i] );
+                                        foundOne = true;
+                                        break;
+                                }
+                        }
+                        if( !foundOne ) break;
+                }
+        }
 }
