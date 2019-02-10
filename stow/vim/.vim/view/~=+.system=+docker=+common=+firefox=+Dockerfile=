@@ -1,5 +1,21 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
+inoreabbr <buffer> <silent> stopsignal =DockerfileReplaceInstruction("stopsignal", "STOPSIGNAL")
+inoreabbr <buffer> <silent> onbuild =DockerfileReplaceInstruction("onbuild", "ONBUILD")
+inoreabbr <buffer> <silent> arg =DockerfileReplaceInstruction("arg", "ARG")
+inoreabbr <buffer> <silent> workdir =DockerfileReplaceInstruction("workdir", "WORKDIR")
+inoreabbr <buffer> <silent> user =DockerfileReplaceInstruction("user", "USER")
+inoreabbr <buffer> <silent> volume =DockerfileReplaceInstruction("volume", "VOLUME")
+inoreabbr <buffer> <silent> entrypoint =DockerfileReplaceInstruction("entrypoint", "ENTRYPOINT")
+inoreabbr <buffer> <silent> copy =DockerfileReplaceInstruction("copy", "COPY")
+inoreabbr <buffer> <silent> add =DockerfileReplaceInstruction("add", "ADD")
+inoreabbr <buffer> <silent> env =DockerfileReplaceInstruction("env", "ENV")
+inoreabbr <buffer> <silent> expose =DockerfileReplaceInstruction("expose", "EXPOSE")
+inoreabbr <buffer> <silent> label =DockerfileReplaceInstruction("label", "LABEL")
+inoreabbr <buffer> <silent> cmd =DockerfileReplaceInstruction("cmd", "CMD")
+inoreabbr <buffer> <silent> run =DockerfileReplaceInstruction("run", "RUN")
+inoreabbr <buffer> <silent> maintainer =DockerfileReplaceInstruction("maintainer", "MAINTAINER")
+inoreabbr <buffer> <silent> from =DockerfileReplaceInstruction("from", "FROM")
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -116,77 +132,11 @@ setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-10,67fold
-8,67fold
-68,75fold
-68,75fold
-76,90fold
-91,106fold
-107,115fold
-116,122fold
-116,124fold
-1,124fold
-1,124fold
-1,124fold
-126,135fold
-126,135fold
-137,141fold
-137,141fold
-126,141fold
-143,150fold
-143,150fold
-143,150fold
-143,150fold
-152,152fold
-152,165fold
-152,165fold
-167,176fold
-167,176fold
-178,185fold
-187,194fold
-1
-normal! zo
-1
-normal! zo
-1
-normal! zo
-8
-normal! zo
-10
-normal! zo
-8
-normal! zc
-68
-normal! zo
-68
-normal! zo
-116
-normal! zo
-126
-normal! zo
-126
-normal! zo
-137
-normal! zo
-143
-normal! zo
-143
-normal! zo
-143
-normal! zo
-152
-normal! zo
-152
-normal! zo
-152
-normal! zc
-167
-normal! zo
-let s:l = 68 - ((67 * winheight(0) + 28) / 56)
+let s:l = 2 - ((1 * winheight(0) + 36) / 72)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-68
+2
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

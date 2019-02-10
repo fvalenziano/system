@@ -1,0 +1,82 @@
+E1. Overload '+' operator to work with a custom class
+
+Create class Values that adds the value of 'x' and 'y', with default values of 0 for each.
+Define a function within class Values that prints Values as a string instead of an object.
+Create a function that overloads the '+' operator to handle our class Values inputs.
+
+class Values:
+    def __init__()
+    
+    def __str__():
+
+    def __add__():
+        return Values(x,y)
+
+E2. Overload '>' operator
+Create class Compare that performs a 'greater than' comparison of two user supplied values
+
+class Compare:
+    def __init__():
+
+    def __gt__(self, input):
+        if():
+
+        else:
+
+c1 = Compare(4)
+c2 = Compare(5)
+if(c1>c2):
+    print("c1 greater than c2")
+else:
+    print("c2 greater than c1")
+
+
+E3. Using a generator and nested for loop, print value1 and value2 as pairs until all values are exhausted
+
+value1 = ['a', 'b', 'c', 'd']
+value2 = ['1', '2', '3', '4', '5']
+
+def values():
+    for :
+        for :
+            
+for i in values:
+    print(i)
+
+
+('a', 1)
+('a', 2)
+('a', 3)
+('a', 4)
+('a', 5)
+...
+('e', 1)
+('e', 2)
+('e', 3)
+('e', 4)
+('e', 5)
+
+
+E4. Use a generator expression instead of for loop to achieve same task as E3
+
+value1 = ['a', 'b', 'c', 'd']
+value2 = [1, 2, 3, 4, 5]
+
+values = ((v1, v2) for )
+
+
+
+for i in values:
+    print(i)
+
+('a', 1)
+('a', 2)
+('a', 3)
+('a', 4)
+('a', 5)
+...
+('e', 1)
+('e', 2)
+('e', 3)
+('e', 4)
+('e', 5)
