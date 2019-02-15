@@ -15,6 +15,7 @@ alias mkdir='mkdir -pv'
 alias ls='ls --color'
 alias lash='ls --color -ash'
 alias stowit='stow -t /home/frank/'
+alias brake='flatpak run fr.handbrake.ghb'
 
 # Dropbox aliases
 alias dfile='dropbox filestatus'
