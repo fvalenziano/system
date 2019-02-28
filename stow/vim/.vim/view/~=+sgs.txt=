@@ -12,11 +12,11 @@ setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
 setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=fb:-,fb:*
+setlocal comments=fb:-,fb:*,n:>
 setlocal commentstring=
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
@@ -57,7 +57,7 @@ setlocal imsearch=-1
 setlocal include=
 setlocal includeexpr=
 setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
@@ -118,38 +118,12 @@ setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-2,6fold
-7,22fold
-7,22fold
-23,34fold
-23,34fold
-2,34fold
-1,34fold
-1,40fold
-1,40fold
-42,44fold
-1
-normal! zo
-1
-normal! zo
-1
-normal! zo
-2
-normal! zo
-7
-normal! zo
-23
-normal! zo
-23
-normal! zo
-42
-normal! zo
-let s:l = 43 - ((42 * winheight(0) + 36) / 72)
+let s:l = 30 - ((29 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-43
-normal! 0
+30
+normal! 06|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

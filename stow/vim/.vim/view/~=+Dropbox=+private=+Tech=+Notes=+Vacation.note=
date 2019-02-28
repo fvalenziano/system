@@ -83,8 +83,10 @@ setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
+setlocal scrolloff=-1
 setlocal shiftwidth=8
 setlocal noshortname
+setlocal sidescrolloff=-1
 setlocal signcolumn=auto
 setlocal nosmartindent
 setlocal softtabstop=4
@@ -142,8 +144,8 @@ silent! normal! zE
 152,165fold
 167,176fold
 167,176fold
-178,185fold
-187,194fold
+178,187fold
+189,196fold
 1
 normal! zo
 1
@@ -158,10 +160,10 @@ normal! zo
 normal! zc
 68
 normal! zo
-68
-normal! zo
 116
 normal! zo
+1
+normal! zc
 126
 normal! zo
 126
@@ -182,12 +184,14 @@ normal! zo
 normal! zc
 167
 normal! zo
-let s:l = 68 - ((67 * winheight(0) + 28) / 56)
+178
+normal! zo
+let s:l = 184 - ((41 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-68
-normal! 0
+184
+normal! 05|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

@@ -7,13 +7,6 @@ servers = (
     tls_verify = "no";
   },
   {
-    address = "irc.orpheus.network";
-    chatnet = "orpheus";
-    port = "+7000";
-    use_tls = "yes";
-    tls_verify = "yes";
-  },
-  {
     address = "irc.broadcasthe.net";
     chatnet = "btn";
     port = "6697";
@@ -29,9 +22,8 @@ chatnets = {
     max_msgs = "4";
     max_whois = "1";
   };
-  popcorn = { type = "IRC"; nick = "seekret"; };
-  orpheus = { type = "IRC"; nick = "seekret"; };
-  btn = { type = "IRC"; nick = "seekret"; };
+  popcorn = { type = "IRC"; nick = "dopocaffe"; };
+  btn = { type = "IRC"; nick = "dopocaffe"; };
 
   aliases = {
     ATAG = "WINDOW SERVER";

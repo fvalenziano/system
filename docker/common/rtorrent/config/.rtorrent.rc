@@ -1,0 +1,14 @@
+# new downloads destination
+directory = /home/rtorrent/plexMedia/tmp
+
+session = /srv/torrent/.session
+
+port_range = 3310
+scgi_port = 127.0.0.1:5000 # communicate with flood
+port_random = no
+
+dht = off
+peer_exchange = no
+
+encryption = allow_incoming,try_outgoing,enable_retry
+check_hash = yes

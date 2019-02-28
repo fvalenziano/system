@@ -5,18 +5,22 @@ call plug#begin('~/.system/vim-plugged/autoload/plugged')
 Plug 'git@github.com:fvalenziano/jellybeans.vim.git'
 " Docker syntax
 Plug 'git@github.com:fvalenziano/Dockerfile.vim.git'
+" vimwiki
+Plug 'git@github.com:fvalenziano/vimwiki.git'
 " end plugins
 call plug#end()
 
 set number
 set ai " enable auto-indent
-syntax on " highlighting and color
+
 " tabs are read as 4 spaces, tabs become spaces
 set tabstop=4
 set softtabstop=4
 set expandtab
+
 set cursorline " underlines cursor location
 set nowrap " disable wordwrap
+
 " perform menu navigation, but not autocompletion
 set wildmenu
 set wildmode=longest:full,full
@@ -35,6 +39,11 @@ set splitright
     " Keep Shift-O/o behavior for jumping to lines
     " Enter - insert line below
 nmap <CR> o<Esc>k
+
+" vimwiki requirements
+set nocompatible
+filetype plugin on
+syntax on
 
 "Jellybeans colorscheme
 colorscheme jellybeans
