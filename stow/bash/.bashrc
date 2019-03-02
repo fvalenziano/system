@@ -30,7 +30,3 @@ alias reboot="sudo systemctl reboot"
 alias shutdown="sudo systemctl poweroff"
 alias halt="sudo systemctl halt"
 
-# Homefinder aliases
-if [ -f ~/.homefinder_aliases ]; then
-        . ~/.homefinder_aliases
-fi

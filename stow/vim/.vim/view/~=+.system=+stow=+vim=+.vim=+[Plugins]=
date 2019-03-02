@@ -15,7 +15,7 @@ setlocal bufhidden=wipe
 setlocal nobuflisted
 setlocal buftype=nofile
 setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
@@ -60,7 +60,7 @@ setlocal imsearch=-1
 setlocal include=
 setlocal includeexpr=
 setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
@@ -86,10 +86,8 @@ setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
-setlocal scrolloff=-1
 setlocal shiftwidth=8
 setlocal noshortname
-setlocal sidescrolloff=-1
 setlocal signcolumn=auto
 setlocal nosmartindent
 setlocal softtabstop=4
@@ -107,20 +105,17 @@ endif
 setlocal tabstop=4
 setlocal tagcase=
 setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
+setlocal termkey=
+setlocal termsize=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
 setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 17) / 35)
+let s:l = 1 - ((0 * winheight(0) + 35) / 71)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt

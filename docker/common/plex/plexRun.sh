@@ -9,5 +9,5 @@ docker run \
 -e PLEX_CLAIM="claim-UsqzxsTvfab14uz16WWG" \
 -v ~/.plex/config:/config \
 -v ~/.plex/transcode:/transcode \
--v ~/.plexMedia:/data:ro \
+-v /data:/data:rw \
 plexinc/pms-docker

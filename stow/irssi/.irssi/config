@@ -2,7 +2,7 @@ servers = (
   {
     address = "irc.passthepopcorn.me";
     chatnet = "ptp";
-    port = "+7000";
+    port = "7000";
     use_tls = "yes";
     tls_verify = "no";
   },
@@ -10,6 +10,13 @@ servers = (
     address = "irc.broadcasthe.net";
     chatnet = "btn";
     port = "6697";
+    use_tls = "yes";
+    tls_verify = "no";
+  }
+  {
+    address = "irc.animebytes.tv";
+    chatnet = "ab";
+    port = "7000";
     use_tls = "yes";
     tls_verify = "no";
   }
@@ -22,8 +29,9 @@ chatnets = {
     max_msgs = "4";
     max_whois = "1";
   };
-  popcorn = { type = "IRC"; nick = "dopocaffe"; };
+  ptp= { type = "IRC"; nick = "seekret"; };
   btn = { type = "IRC"; nick = "dopocaffe"; };
+  ab = { type = "IRC"; nick = "dopocaffe"; };
 
   aliases = {
     ATAG = "WINDOW SERVER";

@@ -1,8 +1,15 @@
+" Create autoload for 'plugged'
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 " vim-plug plugin manager
-"call plug#begin('~/.vim/autoload/plugged')
-call plug#begin('~/.system/vim-plugged/autoload/plugged')
+call plug#begin('~/.vim-plugged/autoload/plugged')
 "JellyBean Colorscheme
 Plug 'git@github.com:fvalenziano/jellybeans.vim.git'
+"Gruvbox colorscheme
+Plug 'git@github.com:fvalenziano/gruvbox.git'
 " Docker syntax
 Plug 'git@github.com:fvalenziano/Dockerfile.vim.git'
 " vimwiki
@@ -47,6 +54,8 @@ syntax on
 
 "Jellybeans colorscheme
 colorscheme jellybeans
+"Gruvbox colorscheme
+"colorscheme gruvbox
 
 " auto-persist folds
 augroup AutoSaveFolds
