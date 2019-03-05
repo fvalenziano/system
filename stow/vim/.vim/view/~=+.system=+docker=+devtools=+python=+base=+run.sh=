@@ -102,15 +102,12 @@ endif
 setlocal tabstop=4
 setlocal tagcase=
 setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
+setlocal termkey=
+setlocal termsize=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
 setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap

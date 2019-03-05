@@ -20,18 +20,19 @@ call plug#end()
 set number
 set ai " enable auto-indent
 
+"Formatting
 " tabs are read as 4 spaces, tabs become spaces
 set tabstop=4
 set softtabstop=4
 set expandtab
-
+colorscheme jellybeans
 set cursorline " underlines cursor location
 set nowrap " disable wordwrap
 
+" Navigation
 " perform menu navigation, but not autocompletion
 set wildmenu
 set wildmode=longest:full,full
-
 " split navigation shortcuts
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -40,22 +41,38 @@ nnoremap <C-H> <C-W><C-H>
 " Open the new split pane on bottom/right
 set splitbelow
 set splitright
-
-" Inserting new line with Enter
-" Vim handling of escape sequences prevent Shift+Enter remap
-    " Keep Shift-O/o behavior for jumping to lines
-    " Enter - insert line below
+" Insert new line without entering insert mode
+" and without jumping to new line
+" GVim version of 'new line above current position'
+nmap <S-Enter> O<Esc>j
+" Console version of 'new line above current position'
+nmap <C-o> O<Esc>j
+" insert new line below current position
 nmap <CR> o<Esc>k
 
 " vimwiki requirements
 set nocompatible
 filetype plugin on
 syntax on
-
-"Jellybeans colorscheme
-colorscheme jellybeans
-"Gruvbox colorscheme
-"colorscheme gruvbox
+" vimwiki settings
+let g:vimwiki_list = [
+    \{'path': '~/Dropbox/private/vimwiki/index.wiki'},
+    \]
+au BufRead,BufNewFile *.wiki set filetype=vimwiki
+function! ToggleCalendar()
+  execute ":Calendar"
+  if exists("g:calendar_open")
+    if g:calendar_open == 1
+      execute "q"
+      unlet g:calendar_open
+    else
+      g:calendar_open = 1
+    end
+  else
+    let g:calendar_open = 1
+  end
+endfunction
+:autocmd FileType vimwiki map c :call ToggleCalendar()
 
 " auto-persist folds
 augroup AutoSaveFolds

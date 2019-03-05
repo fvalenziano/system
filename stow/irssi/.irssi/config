@@ -15,7 +15,7 @@ servers = (
   }
   {
     address = "irc.animebytes.tv";
-    chatnet = "ab";
+    chatnet = "anime";
     port = "7000";
     use_tls = "yes";
     tls_verify = "no";
@@ -29,9 +29,9 @@ chatnets = {
     max_msgs = "4";
     max_whois = "1";
   };
-  ptp= { type = "IRC"; nick = "seekret"; };
+  ptp= { type = "IRC"; nick = "dopocaffe"; };
   btn = { type = "IRC"; nick = "dopocaffe"; };
-  ab = { type = "IRC"; nick = "dopocaffe"; };
+  anime = { type = "IRC"; nick = "dopocaffe"; };
 
   aliases = {
     ATAG = "WINDOW SERVER";
@@ -289,9 +289,9 @@ chatnets = {
   };
   settings = {
     core = {
-      real_name = "seekret";
-      user_name = "seekret";
-      nick = "seekret";
+      real_name = "dopocaffe";
+      user_name = "dopocaffe";
+      nick = "dopocaffe";
     };
     "fe-text" = { actlist_sort = "refnum"; };
     type = "IRC";
@@ -300,9 +300,9 @@ chatnets = {
 };
 settings = {
   core = { 
-    real_name = "seekret";
-    user_name = "seekret";
-    nick = "seekret";
+    real_name = "dopocaffe";
+    user_name = "dopocaffe";
+    nick = "dopocaffe";
   };
   "fe-text" = { actlist_sort = "refnum"; };
 };
