@@ -12,10 +12,17 @@ servers = (
     port = "6697";
     use_tls = "yes";
     tls_verify = "no";
-  }
+  },
   {
     address = "irc.animebytes.tv";
     chatnet = "anime";
+    port = "7000";
+    use_tls = "yes";
+    tls_verify = "no";
+  },
+  {
+    address = "irc.scratch-network.net";
+    chatnet = "red";
     port = "7000";
     use_tls = "yes";
     tls_verify = "no";
@@ -29,9 +36,10 @@ chatnets = {
     max_msgs = "4";
     max_whois = "1";
   };
-  ptp= { type = "IRC"; nick = "dopocaffe"; };
+  ptp = { type = "IRC"; nick = "dopocaffe"; };
   btn = { type = "IRC"; nick = "dopocaffe"; };
   anime = { type = "IRC"; nick = "dopocaffe"; };
+  red = { type = "IRC"; nick = "dopocaffe"; };
 
   aliases = {
     ATAG = "WINDOW SERVER";
