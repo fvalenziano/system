@@ -102,7 +102,7 @@ setlocal synmaxcol=3000
 if &syntax != 'vim-plug'
 setlocal syntax=vim-plug
 endif
-setlocal tabstop=4
+setlocal tabstop=8
 setlocal tagcase=
 setlocal tags=
 setlocal termkey=
@@ -115,7 +115,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 27) / 55)
+let s:l = 1 - ((0 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
