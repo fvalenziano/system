@@ -30,12 +30,6 @@ servers = (
 );
 
 chatnets = {
-  Freenode = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
   ptp = { type = "IRC"; nick = "dopocaffe"; };
   btn = { type = "IRC"; nick = "dopocaffe"; };
   anime = { type = "IRC"; nick = "dopocaffe"; };

@@ -14,6 +14,8 @@ Plug 'git@github.com:fvalenziano/gruvbox.git'
 Plug 'git@github.com:fvalenziano/Dockerfile.vim.git'
 " vimwiki
 Plug 'git@github.com:fvalenziano/vimwiki.git'
+" calendar-vim (for vimwiki)
+Plug 'git@github.com:fvalenziano/calendar-vim.git'
 " end plugins
 call plug#end()
 
@@ -22,10 +24,10 @@ set ai " enable auto-indent
 
 "Formatting
 " tabs are read as 4 spaces, tabs become spaces
-set tabstop=4
-set softtabstop=4
+set tabstop=8
 set expandtab
-colorscheme jellybeans
+set softtabstop=4
+colorscheme gruvbox
 set cursorline " underlines cursor location
 set nowrap " disable wordwrap
 
@@ -55,9 +57,7 @@ set nocompatible
 filetype plugin on
 syntax on
 " vimwiki settings
-let g:vimwiki_list = [
-    \{'path': '~/Dropbox/private/vimwiki/index.wiki'},
-    \]
+let g:vimwiki_list = [{'path': '~/Dropbox/private/vimwiki/index.wiki', 'syntax': 'markdown', 'ext': '.md'}]
 au BufRead,BufNewFile *.wiki set filetype=vimwiki
 function! ToggleCalendar()
   execute ":Calendar"
