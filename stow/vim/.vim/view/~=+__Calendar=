@@ -1,5 +1,27 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <buffer>  <Plug>CalendarDoAction
+nmap <buffer> ? <Plug>CalendarShowHelp
+nmap <buffer> q <Plug>CalendarClose
+nmap <buffer> r <Plug>CalendarRedisplay
+nmap <buffer> t <Plug>CalendarGotoToday
+nmap <buffer> <Down> <Plug>CalendarGotoPrevYear
+nmap <buffer> <Up> <Plug>CalendarGotoNextYear
+nmap <buffer> <Left> <Plug>CalendarGotoPrevMonth
+nmap <buffer> <Right> <Plug>CalendarGotoNextMonth
+nmap <buffer> <2-LeftMouse> <Plug>CalendarDoAction
+nnoremap <buffer> <silent> <Plug>CalendarGotoNextYear :call calendar#action("NextYear")
+nnoremap <buffer> <silent> <Plug>CalendarGotoPrevYear :call calendar#action("PrevYear")
+nnoremap <buffer> <silent> <Plug>CalendarGotoNextMonth :call calendar#action("Next>")
+nnoremap <buffer> <silent> <Plug>CalendarGotoPrevMonth :call calendar#action("<Prev")
+nnoremap <buffer> <silent> <Plug>CalendarReDisplay :call calendar#show(0,2019,5)
+nnoremap <buffer> <silent> <Plug>CalendarGotoToday :call calendar#show(b:CalendarDir)
+nnoremap <buffer> <silent> <Plug>CalendarDoAction :call calendar#action()
+nnoremap <buffer> <silent> <Plug>CalendarClose :call calendar#close()
+let &cpo=s:cpo_save
+unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -8,19 +30,19 @@ setlocal balloonexpr=
 setlocal nobinary
 setlocal nobreakindent
 setlocal breakindentopt=
-setlocal bufhidden=
+setlocal bufhidden=delete
 setlocal buflisted
-setlocal buftype=
+setlocal buftype=nofile
 setlocal nocindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=#%s
+setlocal comments=s1:/*,mb:*,ex:*/
+setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
-setlocal conceallevel=0
+setlocal conceallevel=2
 setlocal completefunc=
 setlocal nocopyindent
 setlocal cryptmethod=
@@ -33,8 +55,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'sh'
-setlocal filetype=sh
+if &filetype != 'calendar'
+setlocal filetype=calendar
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -48,16 +70,16 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\%(\\(-\\|\\*\\|+\\)\\|\\(\\C\\%(\\d\\+\\.\\)\\)\\)\\s\\+\\%(\\[\\([\ .oOX-]\\)\\]\\s\\)\\?
 setlocal formatprg=
 setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=-1
-setlocal include=
+setlocal include=^\\s*#\\s*include
 setlocal includeexpr=
-setlocal indentexpr=GetShIndent()
-setlocal indentkeys=0{,0},!^F,o,O,e,0=then,0=do,0=else,0=elif,0=fi,0=esac,0=done,0=end,),0=;;,0=;&,0=fin,0=fil,0=fip,0=fir,0=fix
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
@@ -69,9 +91,9 @@ setlocal makeencoding=
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
 setlocal modeline
-setlocal modifiable
+setlocal nomodifiable
 setlocal nrformats=bin,octal,hex
-setlocal number
+setlocal nonumber
 setlocal numberwidth=4
 setlocal omnifunc=
 setlocal path=
@@ -94,12 +116,12 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=
 setlocal suffixesadd=
-setlocal swapfile
+setlocal noswapfile
 setlocal synmaxcol=3000
-if &syntax != 'sh'
-setlocal syntax=sh
+if &syntax != 'calendar'
+setlocal syntax=calendar
 endif
-setlocal tabstop=4
+setlocal tabstop=8
 setlocal tagcase=
 setlocal tags=
 setlocal termkey=
@@ -109,16 +131,15 @@ setlocal thesaurus=
 setlocal noundofile
 setlocal undolevels=-123456
 setlocal nowinfixheight
-setlocal nowinfixwidth
+setlocal winfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 35 - ((14 * winheight(0) + 8) / 17)
+let s:l = 15 - ((14 * winheight(0) + 36) / 72)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 011|
+15
+normal! 05|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

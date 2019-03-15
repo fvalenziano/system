@@ -30,3 +30,9 @@ alias reboot="sudo systemctl reboot"
 alias shutdown="sudo systemctl poweroff"
 alias halt="sudo systemctl halt"
 
+
+# convert *.wav in cwd to .flac
+wavtoflac()
+{
+         for i in *.wav; do ffmpeg -i "$i" -c:a flac -compression_level 8 "${i%.wav}".flac; done
+ }

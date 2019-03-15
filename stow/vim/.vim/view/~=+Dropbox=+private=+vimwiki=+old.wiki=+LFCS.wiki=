@@ -35,10 +35,18 @@ vnoremap <buffer> <silent> ah :call vimwiki#base#TO_header(0, 0, v:count1)
 onoremap <buffer> <silent> ah :call vimwiki#base#TO_header(0, 0, v:count1)
 nnoremap <buffer> gww :VimwikiTableAlignW
 nnoremap <buffer> gqq :VimwikiTableAlignQ
+noremap <buffer> <silent> gLA :VimwikiChangeSymbolInListTo A)
+noremap <buffer> <silent> glA :VimwikiChangeSymbolTo A)
+noremap <buffer> <silent> gLa :VimwikiChangeSymbolInListTo a)
+noremap <buffer> <silent> gla :VimwikiChangeSymbolTo a)
+noremap <buffer> <silent> gLI :VimwikiChangeSymbolInListTo I)
+noremap <buffer> <silent> glI :VimwikiChangeSymbolTo I)
+noremap <buffer> <silent> gLi :VimwikiChangeSymbolInListTo i)
+noremap <buffer> <silent> gli :VimwikiChangeSymbolTo i)
 noremap <buffer> <silent> gL1 :VimwikiChangeSymbolInListTo 1.
 noremap <buffer> <silent> gl1 :VimwikiChangeSymbolTo 1.
-noremap <buffer> <silent> gL+ :VimwikiChangeSymbolInListTo +
-noremap <buffer> <silent> gl+ :VimwikiChangeSymbolTo +
+noremap <buffer> <silent> gL# :VimwikiChangeSymbolInListTo #
+noremap <buffer> <silent> gl# :VimwikiChangeSymbolTo #
 noremap <buffer> <silent> gL\* :VimwikiChangeSymbolInListTo \*
 noremap <buffer> <silent> gl\* :VimwikiChangeSymbolTo \*
 noremap <buffer> <silent> gL- :VimwikiChangeSymbolInListTo -
@@ -149,7 +157,7 @@ setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
 setlocal formatoptions=tqn
-setlocal formatlistpat=^\\s*\\%(\\(-\\|\\*\\|+\\)\\|\\(\\C\\%(\\d\\+\\.\\)\\)\\)\\s\\+\\%(\\[\\([\ .oOX-]\\)\\]\\s\\)\\?
+setlocal formatlistpat=^\\s*\\%(\\(-\\|\\*\\|#\\)\\|\\(\\C\\%(\\d\\+)\\|\\d\\+\\.\\|[ivxlcdm]\\+)\\|[IVXLCDM]\\+)\\|\\l\\{1,2})\\|\\u\\{1,2})\\)\\)\\)\\s\\+\\%(\\[\\([\ .oOX-]\\)\\]\\s\\)\\?
 setlocal formatprg=
 setlocal grepprg=
 setlocal iminsert=0
@@ -193,7 +201,7 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=
-setlocal suffixesadd=.md
+setlocal suffixesadd=.wiki
 setlocal swapfile
 setlocal synmaxcol=3000
 if &syntax != 'vimwiki'
@@ -201,7 +209,7 @@ setlocal syntax=vimwiki
 endif
 setlocal tabstop=8
 setlocal tagcase=
-setlocal tags=./tags,./TAGS,tags,TAGS,~/Dropbox/private/vimwiki/index.wiki/.tags
+setlocal tags=./tags,./TAGS,tags,TAGS,~/vimwiki/.tags
 setlocal termkey=
 setlocal termsize=
 setlocal textwidth=0
@@ -213,11 +221,11 @@ setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 36) / 72)
+let s:l = 3 - ((2 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
+3
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
