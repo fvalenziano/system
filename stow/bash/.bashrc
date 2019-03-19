@@ -31,8 +31,32 @@ alias shutdown="sudo systemctl poweroff"
 alias halt="sudo systemctl halt"
 
 
-# convert *.wav in cwd to .flac
+# CD Ripping/Converting tools
+abcDB()
+{
+        abcde -c ~/.abcDB.flac.conf
+}
+abcMB()
+{
+        abcde -c ~/.abcMB.flac.conf
+}
 wavtoflac()
 {
          for i in *.wav; do ffmpeg -i "$i" -c:a flac -compression_level 8 "${i%.wav}".flac; done
- }
+}
+flacto320()
+{
+        parallel ffmpeg -i {} -b:a 320k {.}.mp3 ::: *.flac
+}
+flactov0()
+{
+        parallel -j "$(nproc)" ffmpeg -i {} -q:a 0 {.}.mp3 ::: *.flac
+}
+alias wff="wavtoflac && flacto320 && flactov0 && mp3dirs"
+flactomp3()
+{
+        parallel ffmpeg -i {} -b:a 320k {.}.mp3 ::: *.flac
+        mv *.mp3 ../*320
+        parallel -j "$(nproc)" ffmpeg -i {} -q:a 0 {.}.mp3 ::: *.flac
+        mv *.mp3 ../*v0
+}

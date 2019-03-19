@@ -1,11 +1,11 @@
-FROM alpine:edge
+FROM ubuntu:18.04
 LABEL maintainer "frank@valenziano.us"
 ENV LANG C.UTF-8
 
-RUN  apk --no-cache update && \
-            apk --no-cache upgrade && \
-            apk add --no-cache \
-            abiword
+RUN apt-get update && \
+            apt-get upgrade && \
+            apt-get install -y \
+            abiword --install-recommends
 
 
-ENTRYPOINT [ ]
+ENTRYPOINT [ "/bin/bash" ]
