@@ -32,31 +32,20 @@ alias halt="sudo systemctl halt"
 
 
 # CD Ripping/Converting tools
-abcDB()
+v3()
 {
-        abcde -c ~/.abcDB.flac.conf
+        parallel ffmpeg -i {} -b:a 320k $1{.}.mp3 ::: *.flac
 }
-abcMB()
+v0()
 {
-        abcde -c ~/.abcMB.flac.conf
+        parallel -j "$(nproc)" ffmpeg -i {} -q:a 0 $1{.}.mp3 ::: *.flac
 }
-wavtoflac()
-{
-         for i in *.wav; do ffmpeg -i "$i" -c:a flac -compression_level 8 "${i%.wav}".flac; done
-}
-flacto320()
+2mp3()
 {
         parallel ffmpeg -i {} -b:a 320k {.}.mp3 ::: *.flac
-}
-flactov0()
-{
+        mv *.mp3 *320
         parallel -j "$(nproc)" ffmpeg -i {} -q:a 0 {.}.mp3 ::: *.flac
+        mv *.mp3 *V0
+        mv *.flac *FLAC
 }
-alias wff="wavtoflac && flacto320 && flactov0 && mp3dirs"
-flactomp3()
-{
-        parallel ffmpeg -i {} -b:a 320k {.}.mp3 ::: *.flac
-        mv *.mp3 ../*320
-        parallel -j "$(nproc)" ffmpeg -i {} -q:a 0 {.}.mp3 ::: *.flac
-        mv *.mp3 ../*v0
-}
+

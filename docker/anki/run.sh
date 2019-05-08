@@ -1,9 +1,9 @@
 #!/bin/sh
 
-container=
-image=
+container=anki
+image=anki
 
-xhost +"local:docker@"
+xhost +"localhost:docker@"
 
 docker run -t --rm --name $container\
         -v /etc/localtime:/etc/localtime:ro \
