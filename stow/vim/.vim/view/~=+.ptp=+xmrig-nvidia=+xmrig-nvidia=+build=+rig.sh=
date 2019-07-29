@@ -78,7 +78,7 @@ setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
-setlocal readonly
+setlocal noreadonly
 setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
@@ -99,7 +99,7 @@ setlocal synmaxcol=3000
 if &syntax != 'sh'
 setlocal syntax=sh
 endif
-setlocal tabstop=4
+setlocal tabstop=8
 setlocal tagcase=
 setlocal tags=
 setlocal termkey=
@@ -113,12 +113,12 @@ setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 20 - ((19 * winheight(0) + 36) / 73)
+let s:l = 1 - ((0 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
-normal! 017|
+1
+normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

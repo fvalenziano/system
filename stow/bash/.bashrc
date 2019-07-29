@@ -6,7 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+PATH="$HOME/.local/bin:$HOME/bin:$PATH:/usr/bin/snap:$PATH"
 export PATH
 export PS1="\w \[$(tput sgr0)\]"
 
@@ -14,7 +14,7 @@ export PS1="\w \[$(tput sgr0)\]"
 alias mkdir='mkdir -pv'
 alias ls='ls --color'
 alias lash='ls --color -ash'
-alias stowit='stow -t /home/frank/'
+alias stowit='stow -t /home/${USER}/'
 alias brake='flatpak run fr.handbrake.ghb'
 
 # Dropbox aliases
