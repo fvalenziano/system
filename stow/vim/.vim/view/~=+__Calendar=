@@ -7,19 +7,19 @@ nmap <buffer> ? <Plug>CalendarShowHelp
 nmap <buffer> q <Plug>CalendarClose
 nmap <buffer> r <Plug>CalendarRedisplay
 nmap <buffer> t <Plug>CalendarGotoToday
-nmap <buffer> <Down> <Plug>CalendarGotoPrevYear
-nmap <buffer> <Up> <Plug>CalendarGotoNextYear
-nmap <buffer> <Left> <Plug>CalendarGotoPrevMonth
-nmap <buffer> <Right> <Plug>CalendarGotoNextMonth
-nmap <buffer> <2-LeftMouse> <Plug>CalendarDoAction
-nnoremap <buffer> <silent> <Plug>CalendarGotoNextYear :call calendar#action("NextYear")
-nnoremap <buffer> <silent> <Plug>CalendarGotoPrevYear :call calendar#action("PrevYear")
-nnoremap <buffer> <silent> <Plug>CalendarGotoNextMonth :call calendar#action("Next>")
-nnoremap <buffer> <silent> <Plug>CalendarGotoPrevMonth :call calendar#action("<Prev")
-nnoremap <buffer> <silent> <Plug>CalendarReDisplay :call calendar#show(0,2019,5)
-nnoremap <buffer> <silent> <Plug>CalendarGotoToday :call calendar#show(b:CalendarDir)
-nnoremap <buffer> <silent> <Plug>CalendarDoAction :call calendar#action()
 nnoremap <buffer> <silent> <Plug>CalendarClose :call calendar#close()
+nnoremap <buffer> <silent> <Plug>CalendarDoAction :call calendar#action()
+nnoremap <buffer> <silent> <Plug>CalendarGotoToday :call calendar#show(b:CalendarDir)
+nnoremap <buffer> <silent> <Plug>CalendarReDisplay :call calendar#show(0,2019,11)
+nnoremap <buffer> <silent> <Plug>CalendarGotoPrevMonth :call calendar#action("<Prev")
+nnoremap <buffer> <silent> <Plug>CalendarGotoNextMonth :call calendar#action("Next>")
+nnoremap <buffer> <silent> <Plug>CalendarGotoPrevYear :call calendar#action("PrevYear")
+nnoremap <buffer> <silent> <Plug>CalendarGotoNextYear :call calendar#action("NextYear")
+nmap <buffer> <2-LeftMouse> <Plug>CalendarDoAction
+nmap <buffer> <Right> <Plug>CalendarGotoNextMonth
+nmap <buffer> <Left> <Plug>CalendarGotoPrevMonth
+nmap <buffer> <Up> <Plug>CalendarGotoNextYear
+nmap <buffer> <Down> <Plug>CalendarGotoPrevYear
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -134,12 +134,12 @@ setlocal nowinfixheight
 setlocal winfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 15 - ((14 * winheight(0) + 36) / 72)
+let s:l = 15 - ((14 * winheight(0) + 35) / 71)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 15
-normal! 05|
+normal! 012|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

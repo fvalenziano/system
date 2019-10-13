@@ -7,6 +7,13 @@ servers = (
     tls_verify = "no";
   },
   {
+    address = "irc.myanonamouse.net";
+    chatnet = "mouse";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "no";
+  },
+  {
     address = "irc.broadcasthe.net";
     chatnet = "btn";
     port = "6697";
@@ -298,10 +305,10 @@ chatnets = {
     "fe-text" = { actlist_sort = "refnum"; };
     type = "IRC";
   };
-  ptp = { type = "IRC"; };
+  mouse = { type = "IRC"; };
 };
 settings = {
-  core = { 
+  core = {
     real_name = "dopocaffe";
     user_name = "dopocaffe";
     nick = "dopocaffe";

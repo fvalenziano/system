@@ -5,6 +5,11 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Source Homefinder shortcuts
+if [ -f /home/dopocaffe/homefinder/.bashrc ]; then
+        . /home/dopocaffe/homefinder/.bashrc
+fi
+
 # User specific environment
 PATH="$HOME/.local/bin:$HOME/bin:$PATH:/usr/bin/snap:$PATH"
 export PATH
@@ -16,6 +21,10 @@ alias ls='ls --color'
 alias lash='ls --color -ash'
 alias stowit='stow -t /home/${USER}/'
 alias brake='flatpak run fr.handbrake.ghb'
+
+# media aliases
+alias sonarr='mono --debug /opt/NzbDrone/NzbDrone.exe'
+alias radarr='mono --debug /opt/Radarr/Radarr.exe'
 
 # Dropbox aliases
 alias dfile='dropbox filestatus'

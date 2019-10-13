@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/dopocaffe/Dropbox/private/vimwiki'
 let g:netrw_dirhist_2='/home/dopocaffe/Dropbox/private'
 let g:netrw_dirhist_3='/home/dopocaffe/Dropbox/private/vimwiki'
 let g:netrw_dirhist_4='/home/dopocaffe/Dropbox/private/vimwiki/index.wiki'
+let g:netrw_dirhist_5='/home/dopocaffe/.irssi'
