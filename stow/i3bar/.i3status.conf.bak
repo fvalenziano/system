@@ -37,5 +37,8 @@ time {
         format = "%l:%M:%S:%P | %Y-%m-%d"
 }
 disk "/" {
-        format = "%avail"
+        format = "%avail:/"
+}
+disk "/data/two" {
+    format = "%avail:/two"
 }

@@ -5,8 +5,7 @@ ENV LANG C.UTF-8
 RUN apt-get update && \
             apt-get upgrade && \
             apt-get install -y \
-            wget
-
-RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
+            calibre
 
 ENTRYPOINT [ "/bin/bash" ]
+

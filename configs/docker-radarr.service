@@ -9,7 +9,7 @@ RestartSec=30
 
 ExecStart=/usr/bin/docker run --rm \
                               --name=radarr \
-                              -v ~/.system/stow/radarr:/config \
+                              -v ~/.radarr/config:/config \
                               -v ~/Downloads:/downloads \
                               -v /data/two/movies:/movies \
                               -e PGID=1000 -e PUID=1000  \

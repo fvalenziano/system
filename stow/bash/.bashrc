@@ -18,7 +18,7 @@ export PS1="\w \[$(tput sgr0)\]"
 # general aliases
 alias mkdir='mkdir -pv'
 alias ls='ls --color'
-alias lash='ls --color -ash'
+alias lash='ls --color -asht'
 alias stowit='stow -t /home/${USER}/'
 alias brake='flatpak run fr.handbrake.ghb'
 
